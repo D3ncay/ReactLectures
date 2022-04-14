@@ -1,0 +1,27 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a{
+  text-decoration: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+button{
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+li{
+  list-style: none;
+}
+
+.App{
+  display: grid;
+ grid-template-columns: 1fr 5fr;
+ grid-template-rows: 100px 1fr;
+}
