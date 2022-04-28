@@ -9,11 +9,10 @@ import { FC } from 'react';
 
 interface IApp{
   state: any,
-  addPost: any,
-  updateNewPostText: any
+  dispatch: any,
 }
 
-export const App:FC<IApp> = ({state, addPost, updateNewPostText}) => {
+export const App:FC<IApp> = ({state, dispatch}) => {
   return (
     <div className="App">
       <Header />
@@ -21,7 +20,7 @@ export const App:FC<IApp> = ({state, addPost, updateNewPostText}) => {
       <Wrapper>
         <Routes>
           <Route  element={<DialogsPage state={state.dialogsPage} />} path="/dialogs" />
-          <Route element={<ProfilePage profilePage={state.profilePage}  addPost={addPost} updateNewPostText={updateNewPostText}/>} path="/" />
+          <Route element={<ProfilePage profilePage={state.profilePage}  dispatch={dispatch} />} path="/" />
         </Routes>
       </Wrapper>
     </div>

@@ -25,26 +25,30 @@ grid-template-columns: 50%;
 
 interface IMyPosts {
     postsInfo: IPost[],
-    addPost: any,
-    updateNewPostText: any,
+    dispatch: any
     newPostText?: string
 }
 
 
-export const MyPosts: FC<IMyPosts> = ({ postsInfo, addPost, newPostText,updateNewPostText }) => {
+export const MyPosts: FC<IMyPosts> = ({ postsInfo, dispatch, newPostText }) => {
 
     let posts = postsInfo.map((text, index) => <Post key={index} {...text} />)
     const textarea = useRef<HTMLTextAreaElement>(null);
 
     const addNewPost = () => {
         if (textarea.current){
-            addPost();
+            dispatch({
+                type: 'ADD-POST'
+            })
         }
     }
 
     let onPostChange = () => {
         if (textarea.current &&  textarea.current.value !== ''){
-            updateNewPostText(textarea.current.value)
+            dispatch({
+                type: 'UPDATE-NEW-POST-TEXT',
+                newText: textarea.current.value
+            })
         }
     }
     

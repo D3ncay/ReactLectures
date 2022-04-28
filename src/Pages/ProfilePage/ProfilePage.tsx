@@ -10,16 +10,15 @@ const ProfileContainer = styled.div`
 
 interface IProfilePage{
     profilePage:any,
-    addPost: any,
-    updateNewPostText: any
+    dispatch: any
 }
 
 
-export const ProfilePage:FC<IProfilePage> = ({profilePage, updateNewPostText , addPost}) => {
+export const ProfilePage:FC<IProfilePage> = ({profilePage,dispatch}) => {
     return (
         <ProfileContainer>
             <ProfileInfo name='Денис Баженов' avatarImg="./images/avatar.jpg" />
-            <MyPosts addPost={addPost} updateNewPostText={updateNewPostText} postsInfo={profilePage.posts} newPostText={profilePage.newPostText} />
+            <MyPosts dispatch={dispatch}  postsInfo={profilePage.posts} newPostText={profilePage.newPostText} />
         </ProfileContainer>
     )
 }
