@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { Users } from './Users/Users';
 import { Messages } from './Messages/Messages';
 import { FC } from 'react';
-import { addPost } from './../../redux/state';
 
 const DialogsContainer = styled.div`
     display: grid;
@@ -14,12 +13,12 @@ const DialogsContainer = styled.div`
 `
 
 interface IDialogsPage{
-    state: {[key:string]: Array<any>},
+    state: {[key:string]: Array<any>}
 }
 
 
 export const DialogsPage:FC<IDialogsPage> = ({state}) => {
-    console.log(state);
+  
     return (
         <DialogsContainer>
             <Users dialogsData={state.dialogs}/>

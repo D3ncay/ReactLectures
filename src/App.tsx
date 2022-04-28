@@ -6,13 +6,14 @@ import { ProfilePage } from './Pages/ProfilePage/ProfilePage';
 import { DialogsPage } from './Pages/DialogsPage/DialogsPage';
 import { Route, Routes } from 'react-router-dom';
 import { FC } from 'react';
-import { addPost, updateNewPostText } from './redux/state';
 
 interface IApp{
   state: any,
+  addPost: any,
+  updateNewPostText: any
 }
 
-export const App:FC<IApp> = ({state}) => {
+export const App:FC<IApp> = ({state, addPost, updateNewPostText}) => {
   return (
     <div className="App">
       <Header />

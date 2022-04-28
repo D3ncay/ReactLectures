@@ -4,7 +4,6 @@ import { IPost, Post } from './../Post/Post';
 import { Textarea } from './../common/Textarea/Textarea';
 import { PrimaryButton } from "../common/Buttons/PrimaryButton";
 import React from "react";
-import { addPost } from './../../redux/state';
 
 const MyPostsContainer = styled.div`
     margin-top: 16px;
@@ -26,8 +25,8 @@ grid-template-columns: 50%;
 
 interface IMyPosts {
     postsInfo: IPost[],
-    addPost: () => void,
-    updateNewPostText: (text: string) => void,
+    addPost: any,
+    updateNewPostText: any,
     newPostText?: string
 }
 
@@ -44,7 +43,7 @@ export const MyPosts: FC<IMyPosts> = ({ postsInfo, addPost, newPostText,updateNe
     }
 
     let onPostChange = () => {
-        if (textarea.current &&  textarea.current.value != ''){
+        if (textarea.current &&  textarea.current.value !== ''){
             updateNewPostText(textarea.current.value)
         }
     }

@@ -10,8 +10,8 @@ const ProfileContainer = styled.div`
 
 interface IProfilePage{
     profilePage:any,
-    addPost: () => void,
-    updateNewPostText: () => void
+    addPost: any,
+    updateNewPostText: any
 }
 
 
